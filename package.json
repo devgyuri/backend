@@ -1,8 +1,5 @@
 {
   "devDependencies": {
     "prettier": "3.2.5"
-  },
-  "dependencies": {
-    "coolsms-node-sdk": "^2.0.1"
   }
 }
