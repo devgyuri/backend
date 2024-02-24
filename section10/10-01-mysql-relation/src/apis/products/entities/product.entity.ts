@@ -1,6 +1,6 @@
 import { ProductCategory } from 'src/apis/productsCategories/entities/product.category.entity';
 import { ProductSaleslocation } from 'src/apis/productsSaleslocations/entities/product.saleslocation.entity';
-import { ProductTag } from 'src/apis/productsTags/entities/product.tag';
+import { ProductTag } from 'src/apis/productsTags/entities/product.tag.entity';
 import { User } from 'src/apis/users/entities/user.entity';
 import {
   Column,
