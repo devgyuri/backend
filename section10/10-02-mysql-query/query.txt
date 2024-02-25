@@ -1,0 +1,13 @@
+SHOW DATABASES;
+
+USE myProject;
+
+SHOW tables;
+
+DESC product;
+
+SELECT * FROM product;
+
+INSERT INTO product(_id, name, description, price)
+    VALUES(uuid(), "mouse", "Best mouse", 15000)
+;
