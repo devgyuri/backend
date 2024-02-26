@@ -4,7 +4,7 @@ import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
 @Entity()
 export class ProductTag {
   @PrimaryGeneratedColumn('uuid')
-  _id: string;
+  id: string;
 
   @Column()
   name: string;

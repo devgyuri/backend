@@ -16,7 +16,7 @@ import {
 @Entity()
 export class Product {
   @PrimaryGeneratedColumn('uuid')
-  _id: string;
+  id: string;
 
   // @Column({ type: 'varchar' })
   @Column()

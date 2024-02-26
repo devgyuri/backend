@@ -1,13 +1,81 @@
-SHOW DATABASES;
+SHOW DATABASES
+;
 
-USE myProject;
+USE myProject
+;
 
-SHOW tables;
+SHOW tables
+;
 
-DESC product;
+DESC product
+;
 
-SELECT * FROM product;
+SELECT * FROM product
+;
 
-INSERT INTO product(_id, name, description, price)
-    VALUES(uuid(), "mouse", "Best mouse", 15000)
+INSERT INTO product(id, name, description, price)
+             VALUES(uuid(), 'mouse', 'Best mouse', 15000)
+;
+
+INSERT INTO product(id, name, description, price)
+    		 VALUES(uuid(), 'laptop', 'Good laptop', 200000)
+;
+
+INSERT INTO product(id, name, description, price)
+    		 VALUES(uuid(), 'keyboard', 'Nice keyboard', 30000)
+;
+
+DELETE FROM product
+ WHERE name = 'keyboard'
+;
+
+UPDATE product
+   SET price = 18000
+ WHERE name = 'mouse'
+;
+
+
+# ===== join ======
+
+SELECT *
+  FROM product_saleslocation ps
+;
+
+INSERT INTO product_saleslocation(id, address, addressDetail, lat, lng, meetingTime)
+						   VALUES(uuid(), '구로구', '구로디지털단지', 37.281723, 127.192387, '2023-01-10')
+;
+
+UPDATE product
+   SET productSaleslocationId = 'af631e36-d3de-11ee-85a7-446632c75348'
+ WHERE name = 'mouse'
+;
+
+SELECT p.id, p.name, p.price, ps.address, ps.addressDetail AS '상세주소'
+  FROM product p, product_saleslocation ps 
+ WHERE p.productSaleslocationId = ps.id
+;
+
+# ===== 추가기능 ======
+
+UPDATE product
+   SET isSoldout = TRUE 
+ WHERE name = 'laptop'
+   AND price = '200000'
+;
+
+UPDATE product
+   SET isSoldout = TRUE 
+ WHERE name = 'laptop'
+    OR price = '200000'
+;
+
+
+# ===== 주석 쉽게 다는 법 =====
+
+SELECT *
+  FROM product p
+ WHERE 1 = 1
+   AND price = 5000
+   AND name = 'mouse'
+   AND isSoldout  = FALSE
 ;
