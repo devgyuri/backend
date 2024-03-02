@@ -1,0 +1,13 @@
+SHOW database;
+
+USE myProject;
+
+SHOW variables;
+
+SET GLOBAL max_connections = 15;
+
+SHOW status;
+
+SHOW processlist;
+
+KILL 11;
