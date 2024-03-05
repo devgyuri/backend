@@ -1,0 +1,32 @@
+SELECT COUNT(*) FROM board
+;
+
+SELECT *
+  FROM board b
+ WHERE title = '0.2449281841934921'
+;
+
+SELECT *
+  FROM board b 
+ WHERE number = 266
+;
+
+
+
+EXPLAIN
+ SELECT *
+   FROM board b
+  WHERE title = '0.2449281841934921'
+;
+
+EXPLAIN
+ SELECT *
+   FROM board b 
+  WHERE number = 266
+;
+
+SHOW INDEX FROM board
+;
+
+CREATE INDEX idx_title ON board(title)
+;

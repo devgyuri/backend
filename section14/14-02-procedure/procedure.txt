@@ -1,0 +1,18 @@
+SHOW DATABASES;
+
+USE myProject;
+
+CREATE PROCEDURE myDummyData()
+BEGIN
+	DECLARE i int DEFAULT 1;
+	WHILE i <= 500 do
+		INSERT INTO board(writer, title, contents) VALUES('kitty', RAND(), 'Nice to meet you');
+		SET i = i + 1;
+	END WHILE;
+END;
+
+SHOW PROCEDURE status;
+
+CALL myDummyData();
+
+SELECT * FROM board;
