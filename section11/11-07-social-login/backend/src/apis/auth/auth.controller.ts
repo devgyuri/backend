@@ -19,6 +19,15 @@ export class AuthController {
     return this.authService.loginOAuth({ req, res });
   }
 
+  @UseGuards(AuthGuard('kakao'))
+  @Get('/login/kakao')
+  async loginKakao(
+    @Req() req: Request & IOAuthUser, //
+    @Res() res: Response,
+  ) {
+    return this.authService.loginOAuth({ req, res });
+  }
+
   @UseGuards(AuthGuard('naver'))
   @Get('/login/naver')
   async loginNaver(

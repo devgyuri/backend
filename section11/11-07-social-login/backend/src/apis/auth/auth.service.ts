@@ -48,11 +48,13 @@ export class AuthService {
     });
 
     // 2. 회원가입이 안돼있다면? 자동회원가입
-    if (!user) user = await this.usersService.create({ ...user });
+    if (!user) user = await this.usersService.create({ ...req.user });
 
     // 3. 회원가입이 돼있다면? 로그인(refreshToken, accessToken 만들어서 브라우저에 전송)
     this.setRefreshToken({ user, res });
-    res.redirect('http://localhost:5500/frontend/social-login.html');
+    res.redirect(
+      'http://localhost:5500/section11/11-07-social-login/frontend/social-login.html',
+    );
   }
 
   restoreAccessToken({ user }: IAuthServiceRestoreAccessToken): string {
