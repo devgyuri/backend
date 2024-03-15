@@ -1,3 +1,4 @@
 node_modules
 .env
+.env.docker
 forward-vial-416105-80b688f5a311.json
