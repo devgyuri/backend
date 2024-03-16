@@ -51,12 +51,8 @@ export class IamportService {
         { imp_uid: impUid },
         { headers: { Authorization: token } },
       );
-      console.log('&&&&&& result &&&&&&');
-      console.log(result);
       return result.data.response.cancel_amount;
     } catch (error) {
-      console.log('********** ERROR ***********');
-      console.log(error);
       throw new HttpException(
         error.response.data.message,
         error.response.status,
